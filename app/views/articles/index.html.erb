@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>All Articles</title>
+</head>
+<body>
+
+<h1> List of all Articles</h1>
+  <p>
+    <%= link_to "Create new Article", new_article_path %>
+  </p>
+
+    <table>
+        <tr>
+          <th>MsgID</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Updates</th>
+        </tr>
+
+        <% @articlelist.each do |artl| %>
+        <tr>
+          <td><%= artl.id %></td>
+          <td><%= artl.title %></td>
+          <td><%= artl.description %></td>
+          <td><%= link_to "Edit", edit_article_path(artl) %></td>
+          <td><%= link_to "Show", article_path(artl) %></td>
+        </tr>
+        <% end %>
+    </table>
+
+
+
+</body>
+</html>
