@@ -10,6 +10,17 @@
 
 <h1>Create an Article</h1>
 
+<!-- Embeded ruby code to show error messages on the form -->
+<% if @article.errors.any? %>
+<h4> Check the following errors before submiting..!!</h4>
+    <ul>
+      <% @article.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <%end %>
+    </ul>
+<% end %>
+
+<!-- Form tag to show details on the form -->
   <%= form_for @article do |f| %>
 
     <p>
