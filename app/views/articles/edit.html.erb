@@ -9,34 +9,7 @@
 <body>
 <h1>Edit existing Articles</h1>
 
-<!-- Embeded ruby code to show error messages on the form -->
-<% if @article.errors.any? %>
-<h4> Check the following errors before submiting..!!</h4>
-    <ul>
-      <% @article.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <%end %>
-    </ul>
-<% end %>
-
-<!-- Form tag to show details on the form -->
-  <%= form_for @article do |f| %>
-
-    <p>
-      <%= f.label :title %><br>
-      <%= f.text_field :title %>
-    </p>
-    <p>
-      <%= f.label :description %><br>
-      <%= f.text_area :description %>
-    </p>
-    <p>
-      <%= f.submit %><br>
-    </p>
-
-  <% end %>
-
-<%= link_to "Back to Articles Listing", articles_path %>
+  <%= render 'form' %>
 
 </body>
 </html>

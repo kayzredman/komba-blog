@@ -18,7 +18,6 @@
           <th>MsgID</th>
           <th>Title</th>
           <th>Description</th>
-          <th>Updates</th>
         </tr>
 
         <% @articlelist.each do |artl| %>
@@ -26,8 +25,9 @@
           <td><%= artl.id %></td>
           <td><%= artl.title %></td>
           <td><%= artl.description %></td>
-          <td><%= link_to "Edit", edit_article_path(artl) %></td>
-          <td><%= link_to "Show", article_path(artl) %></td>
+          <td><%= link_to "Edit |", edit_article_path(artl) %></td>
+          <td><%= link_to "Show |", article_path(artl) %></td>
+          <td><%= link_to "Delete", article_path(artl), method: :delete, data: {confirm: "Are You Sure Massa?"} %></td>
         </tr>
         <% end %>
     </table>
