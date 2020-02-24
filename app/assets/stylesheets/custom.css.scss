@@ -18,3 +18,28 @@
 .center{
   text-align: center;
   }
+
+  .jumbotron{
+    background-image: asset-url("komba_new.png");
+    background-size: cover;
+    height: 460px;
+  }
+
+  .jumbotron h1 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: -1px;
+    font-weight: bold;
+  }
+
+  .footer{
+    margin-top: 45px;
+    padding-top: 5px;
+    border-top: 2px solid #eaeaea;
+    color: 4777;
+  }
+
+  .footer small{
+    float: left;
+  }
