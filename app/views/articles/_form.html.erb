@@ -1,15 +1,6 @@
-<!-- Embeded ruby code to show error messages on the form -->
-<% if @article.errors.any? %>
-<h4> Check the following errors before submiting..!!</h4>
-    <ul>
-      <% @article.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <%end %>
-    </ul>
-<% end %>
+<%= render 'shared/errorspanel', obj: @article %>    
 
 <!-- Form tag to show details on the form -->
-
 <div class="row">
   <div class="col-xs-12">
       <%= form_for(@article, :html => {class: "form-horizontal", role: "form"}) do |f| %>
