@@ -18,7 +18,12 @@
               <%= link_to artl.title, article_path(artl) %>
             </div>
             <div class="article-body">
-              <%= truncate(artl.description, length: 300) %>
+                <%= truncate(artl.description, length: 300) %>
+                  <div class="article-meta-details">
+                        <small> Created By: <%= artl.user.username if artl.user %> |
+                              <%= time_ago_in_words(artl.created_at) %> ago |
+                              last Updated: <%= time_ago_in_words(artl.updated_at) %> ago </small>
+                  </div>
             </div>
             <div class="article-actions">
               <%= link_to "Edit this Article", edit_article_path(artl), class: "btn btn-xs btn-primary" %>
