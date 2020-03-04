@@ -10,30 +10,7 @@
 
 <h1 align="center"> List of all Articles</h1>
 
-  <% @articlelist.each do |artl| %>
-    <div class="row">
-      <div class="col-xs-8 col-xs-offset-2">
-        <div class="well well-lg">
-            <div class="article-title">
-              <%= link_to artl.title, article_path(artl) %>
-            </div>
-            <div class="article-body">
-                <%= truncate(artl.description, length: 300) %>
-                  <div class="article-meta-details">
-                        <small> Created By: <%= artl.user.username if artl.user %> |
-                              <%= time_ago_in_words(artl.created_at) %> ago |
-                              last Updated: <%= time_ago_in_words(artl.updated_at) %> ago </small>
-                  </div>
-            </div>
-            <div class="article-actions">
-              <%= link_to "Edit this Article", edit_article_path(artl), class: "btn btn-xs btn-primary" %>
-              <%= link_to "Delete this Article", article_path(artl),
-                  method: :delete, data: { confirm: "Are You Sure" }, class: "btn btn-xs btn-danger" %>
-            </div>
-        </div>
-      </div>
-    </div>
-  <% end %>
+  <%= render 'article', obj: @articlelist %>
 
 
 </body>
