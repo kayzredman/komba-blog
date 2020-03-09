@@ -13,6 +13,11 @@
                             last Updated: <%= time_ago_in_words(artl.updated_at) %> ago </small>
                 </div>
           </div>
+          <!-- Show article category on Listing page -->
+          <% if artl.categories.any? %>
+            <p>Categories: <%= render artl.categories %></p>
+          <% end %><!-- End of Show article category on Listing page -->
+
           <% if logged_in? && (current_user == artl.user || current_user.admin?) %>
             <div class="article-actions">
               <%= link_to "Edit this Article", edit_article_path(artl), class: "btn btn-xs btn-primary" %>

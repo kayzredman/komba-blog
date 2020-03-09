@@ -17,6 +17,11 @@
             <div class="article-title">
               <%= link_to "#{category.name}", category_path(category) %>
             </div>
+            <!-- Count the No of Categories on Index Page -->
+            <div>
+              <small><%= pluralize(category.articles.count, "article") %></small>
+            </div><!-- End of Count the No of Categories on Index Page -->
+            
           </div>
         </div>
       </ul>
